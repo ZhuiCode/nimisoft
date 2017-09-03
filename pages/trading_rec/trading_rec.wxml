@@ -1,0 +1,20 @@
+<view class="app">
+<view class="table">
+        <block>
+            <view class = "tr">
+                <view class="td" >
+                    <text>日期</text>
+                </view>
+                <view class="td" >
+                    <text>时间</text>
+                </view>
+                <view class="td" >
+                    <text>事项</text>
+                </view>
+                <view class="td" >
+                    <text>金额</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

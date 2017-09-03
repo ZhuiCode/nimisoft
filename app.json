@@ -1,0 +1,13 @@
+{
+  "pages": ["pages/main/main","pages/me/me","pages/wallet/wallet","pages/health_data/health_data","pages/charge_standard/charge_standard","pages/hotline/hotline","pages/exchange/exchange","pages/addinfo/addinfo"],
+  "tabBar": {"borderStyle":"white","color":"#fff","selectedColor":"#fff","backgroundColor":"#E5E5E5",
+             "list":[{"iconPath":"images/main_pic.png","selectedIconPath":"images/main_pic.png","text":"首页",      "pagePath":"pages/main/main"},{"iconPath":"images/me_pic.png","selectedIconPath":"images/me_pic.png","text":"我的","pagePath":"pages/me/me"}]},
+    "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
+

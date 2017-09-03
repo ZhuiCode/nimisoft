@@ -1,0 +1,17 @@
+.v_wallat_log
+{
+    height: 100px;
+}
+.img_wallat_log
+{
+    width:60px;
+    height:60px;
+    margin-top:25px;
+    margin-right:auto;
+    opacity:1;
+    margin-left:auto;
+}
+.power_td
+{
+     margin-top:10px;
+}

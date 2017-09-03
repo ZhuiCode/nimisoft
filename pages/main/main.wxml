@@ -1,0 +1,56 @@
+<view class="app">
+    <view class="ele-breakline"></view>
+    <view class="ele_container">
+        <view class="table">
+            <block>
+                <view class = "tr straight_line">
+                    <view class="td short_vertical_line">
+                        <view class="location"><text class="text_location">室外</text></view>
+                        <view class="shop_name"><text class="text_main">{{outer_info.shop_name}}</text></view>
+                    </view>
+                    <view class="td short_vertical_line">
+                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{outer_info.temperature}}°C</text></view>
+                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{outer_info.humidity}}% RH</text></view>
+                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{outer_info.pm25}}</text></view>
+                    </view>
+                    <view class="td short_vertical_line">
+                        <view class="location"><text class="text_location">室内</text></view>
+                        <view class="shop_name"><text class="text_main">{{inter_info.cream}}</text></view>
+                    </view>
+                    <view class="td local_info">
+                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{inter_info.temperature}}°C</text></view>
+                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{inter_info.humidity}}%RH</text></view>
+                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{inter_info.pm25}}</text></view>
+                    </view>
+                </view>
+            </block>
+            <block>
+                <view class = "tr straight_line">
+                    <view class="td short_vertical_line long_td">
+                        <view class="text_info"> 当前场馆人数 </view>
+                        <view class="text_info">{{cur_people}}人 </view>
+                    </view>
+                    <view class="td long_td">
+                        <view class="text_info">今日累计</view>
+                        <view class="text_info">{{today_total_people}}人</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="main_log">
+          <image class ="image_log"src="../../images/log.png"></image>
+    </view>
+    <view class="table">
+        <block>
+            <view class = "tr scan">
+                <view class="td scan_icon" >
+                    <image class="middle_icon" src="../../images/switch.png"></image>
+                </view>
+                <view class="td scan_text">
+                    <view bindtap="scan_begin">扫码开启</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

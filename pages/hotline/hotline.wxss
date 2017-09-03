@@ -1,0 +1,10 @@
+.phone_icon
+{
+    width:60rpx;
+    height:60rpx;
+}
+.phone_td
+{
+    width:120rpx;
+    height:60rpx;
+}

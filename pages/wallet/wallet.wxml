@@ -1,0 +1,38 @@
+<view class="app">
+    <view class="ele-breakline"></view>
+    <view class="table">
+        <block>
+            <view class = "tr">
+                <view class="td" >
+                    <view class = "v_wallat_log">
+                        <image  class="img_wallat_log" src="../../images/wallet.png"></image>
+                    </view>
+                </view>
+                <view class="td power_td" >
+                    <view >{{remain_power}}</view>
+                    <view >
+                        <text>剩余能量豆</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="element breakline"style="border-width:1px;border-bottom-style:solid;margin-top:11px;margin-left:auto;margin-right;:auto;width:375px;border-bottom-color:rgb(255, 153, 0);"></view>
+    <view class="table">
+        <block>
+            <view class = "tr">
+                <view class="td" style="width:50%">
+                    <view bindtap="exchange" >
+                         <text>兑换</text>
+                    </view>
+                </view>
+                <view class="td" >
+                    <view >
+                        <text>钱包</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

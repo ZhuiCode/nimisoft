@@ -1,0 +1,44 @@
+.login_avatar
+{
+  width:80px;
+  height:80px; 
+  opacity:1;
+  border-radius: 50%;
+  margin-top: 20px; 
+}
+.image_icon
+{
+  width:25px;
+  height:25px;
+  margin-bottom:auto;
+  margin-right:0;
+  opacity:1;
+  margin-left:0;
+  padding-left: 0px;
+
+}
+.image_icon_next
+{
+    width:25px;
+    height:25px;
+    margin-bottom:auto;
+    margin-right:auto;
+    opacity:1;
+    margin-left:auto;
+}
+
+.icon_td
+{
+   width:60px;
+}
+.text_td
+{
+    width:120px;
+    text-align: left;
+}
+.next_td
+{
+    width:300px;
+    text-align: right;
+    margin-right: 30px;
+}

@@ -1,0 +1,24 @@
+<view class="app">
+<view class="table">
+        <block>
+            <view class = "tr">
+                <view class="td phone_td" >
+                    <image class="phone_icon" src="../../images/phone.png"></image>
+                </view>
+                <view class="td" >
+                    <text>客服电话1</text>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class = "tr">
+                <view class="td phone_td">
+                    <image class="phone_icon" src="../../images/phone.png"></image>
+                </view>
+                <view class="td" >
+                    <text>客服电话2</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

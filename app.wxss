@@ -1,0 +1,28 @@
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  /*justify-content: center;*/
+  height: 3rem;
+  align-items: center;
+  margin:0,0;
+  padding:0,0;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+
+.element breakline{
+    border-width:1px;
+    border-bottom-style:solid;
+    margin-top:11px;
+    margin-left:auto;
+    margin-right:auto;
+    width:375px;
+    border-bottom-color:rgb(255, 153, 0);
+}
