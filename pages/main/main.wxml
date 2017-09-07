@@ -39,17 +39,12 @@
         </view>
     </view>
     <view class="main_log">
-          <image class ="image_log"src="../../images/log.png"></image>
+         <canvas style="width:auto; height:150px;" canvas-id="canvasArc"></canvas>
     </view>
     <view class="table">
         <block>
             <view class = "tr scan">
-                <view class="td scan_icon" >
-                    <image class="middle_icon" src="../../images/switch.png"></image>
-                </view>
-                <view class="td scan_text">
-                    <view bindtap="scan_begin">扫码开启</view>
-                </view>
+                
             </view>
         </block>
     </view>
