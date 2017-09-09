@@ -8,10 +8,10 @@
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
-                    <image class="image_icon"  src="../../images/wallet.png"></image>
+                    <image class="image_icon"  src="../../images/self_info.png"></image>
                 </view>
                 <view class="td text_td" >
-                    <text>钱包</text>
+                    <text>个人信息</text>
                 </view>
                 <view class="td next_td" >
                     <view bindtap="wallet">
@@ -23,10 +23,10 @@
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
-                    <image class="image_icon"  src="../../images/health_data.png"></image>
+                    <image class="image_icon"  src="../../images/my_plan.png"></image>
                 </view>
                 <view class="td text_td" >
-                    <text>健康数据</text>
+                    <text>我的方案</text>
                 </view>
                 <view class="td next_td" >
                     <view bindtap="health_data">
@@ -38,10 +38,10 @@
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
-                    <image class="image_icon"  src="../../images/charge_standard.png"></image>
+                    <image class="image_icon"  src="../../images/wallet.png"></image>
                 </view>
                 <view class="td text_td" >
-                    <text>收费标准</text>
+                    <text>钱包</text>
                 </view>
                 <view class="td next_td" >
                     <view bindtap="charge_standard">
@@ -50,13 +50,44 @@
                 </view>
             </view>
         </block>
+        
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
-                    <image class="image_icon"  src="../../images/customer_hotline.png"></image>
+                    <image class="image_icon"  src="../../images/team_clock.png"></image>
                 </view>
                 <view class="td text_td" >
-                    <text>客户热线</text>
+                    <text>团队打卡</text>
+                </view>
+                <view class="td next_td" >
+                    <view bindtap="hotline">
+                        <image class="image_icon_next" src="../../images/next_page.png"></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class = "tr">
+                <view class="td icon_td" >
+                    <image class="image_icon"  src="../../images/service.png"></image>
+                </view>
+                <view class="td text_td" >
+                    <text>联系客服</text>
+                </view>
+                <view class="td next_td" >
+                    <view bindtap="hotline">
+                        <image class="image_icon_next" src="../../images/next_page.png"></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block>
+            <view class = "tr">
+                <view class="td icon_td" >
+                    <image class="image_icon"  src="../../images/about_us.png"></image>
+                </view>
+                <view class="td text_td" >
+                    <text>关于我们</text>
                 </view>
                 <view class="td next_td" >
                     <view bindtap="hotline">

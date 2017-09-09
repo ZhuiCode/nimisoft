@@ -41,11 +41,10 @@
     <view class="main_log">
          <canvas style="width:auto; height:150px;" canvas-id="canvasArc"></canvas>
     </view>
-    <view class="table">
-        <block>
-            <view class = "tr scan">
-                
-            </view>
-        </block>
-    </view>
+      <view class="section_tap" >
+        <scroll-view class="cls_sview" scroll-x="true" style="white-space: nowrap; display: flex; width: 250px;height: 80px;border:1px #C0C0C0 solid;border-radius:3px;">
+            <view style="background: white; width: 250px; height: 80px; display: inline-block"><text>敬请期待</text></view>
+            <view style="background: red; width: 80px; height: 80px; display: inline-block"><text>删除</text></view>
+        </scroll-view>
+      </view> 
 </view>
