@@ -6,7 +6,7 @@
   display: flex;
   width: 100%;
   /*justify-content: center;*/
-  height: 3rem;
+  //height: 3rem;
   align-items: center;
   margin:0,0;
   padding:0,0;
@@ -25,4 +25,5 @@
     margin-right:auto;
     width:375px;
     border-bottom-color:rgb(255, 153, 0);
+    
 }

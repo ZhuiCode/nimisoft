@@ -1,9 +1,8 @@
 <view class="app">
-    <view class="ele-breakline"></view>
     <view style="text-align:center;">
       <image class="login_avatar" src="{{userInfo.avatarUrl}}"></image>
     </view>
-    <view class="element breakline"style="border-width:1px;border-bottom-style:solid;margin-top:11px;margin-left:auto;margin-right;:auto;width:375px;border-bottom-color:rgb(255, 153, 0);"></view>
+    <view style="border-width:2px;border-bottom-style:solid;margin-top:11px;margin-left:auto;margin-right:auto;width:375px;border-bottom-color:rgb(202, 202, 202);"></view>
     <view class="table">
         <block>
             <view class = "tr">
@@ -14,18 +13,19 @@
                     <text>个人信息</text>
                 </view>
                 <view class="td next_td" >
-                    <view bindtap="wallet">
+                    <view bindtap="person_info">
                         <image class="image_icon_next"  src="../../images/next_page.png"></image>
                     </view>
                 </view>
             </view>
         </block>
+        <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;width:210px;border-bottom-color:rgb(202, 202, 202);"></view>
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
                     <image class="image_icon"  src="../../images/my_plan.png"></image>
                 </view>
-                <view class="td text_td" >
+                <view class="td line_td text_td" >
                     <text>我的方案</text>
                 </view>
                 <view class="td next_td" >
@@ -35,12 +35,13 @@
                 </view>
             </view>
         </block>
+        <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;width:210px;border-bottom-color:rgb(202, 202, 202);"></view>
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
                     <image class="image_icon"  src="../../images/wallet.png"></image>
                 </view>
-                <view class="td text_td" >
+                <view class="td line_td text_td" >
                     <text>钱包</text>
                 </view>
                 <view class="td next_td" >
@@ -50,9 +51,9 @@
                 </view>
             </view>
         </block>
-        
+        <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;width:210px;border-bottom-color:rgb(202, 202, 202);"></view>
         <block>
-            <view class = "tr">
+            <view class = "tr ">
                 <view class="td icon_td" >
                     <image class="image_icon"  src="../../images/team_clock.png"></image>
                 </view>
@@ -66,12 +67,13 @@
                 </view>
             </view>
         </block>
+        <view style="height:60px;background-color:rgb(202, 202, 202); "></view>
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
                     <image class="image_icon"  src="../../images/service.png"></image>
                 </view>
-                <view class="td text_td" >
+                <view class="td line_td text_td" >
                     <text>联系客服</text>
                 </view>
                 <view class="td next_td" >
@@ -81,12 +83,13 @@
                 </view>
             </view>
         </block>
+         <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;width:210px;border-bottom-color:rgb(202, 202, 202);"></view>
         <block>
             <view class = "tr">
                 <view class="td icon_td" >
                     <image class="image_icon"  src="../../images/about_us.png"></image>
                 </view>
-                <view class="td text_td" >
+                <view class="td  text_td" >
                     <text>关于我们</text>
                 </view>
                 <view class="td next_td" >

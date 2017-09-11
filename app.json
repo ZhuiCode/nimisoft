@@ -7,7 +7,7 @@
     "backgroundTextStyle": "dark"
   },
  
-  "pages": ["pages/main/main","pages/me/me","pages/wallet/wallet","pages/health_data/health_data","pages/charge_standard/charge_standard","pages/hotline/hotline","pages/exchange/exchange","pages/addinfo/addinfo"],
+  "pages": ["pages/main/main","pages/me/me","pages/wallet/wallet","pages/person_info/person_info","pages/charge_standard/charge_standard","pages/hotline/hotline","pages/exchange/exchange","pages/addinfo/addinfo"],
   "tabBar": {"borderStyle":"white","color":"#fff","selectedColor":"#fff","backgroundColor":"#E5E5E5",
              "list":[
                {"iconPath":"images/main_pic.png","selectedIconPath":"images/main_pic.png","text":"首页","pagePath":"pages/main/main"},

@@ -19,10 +19,10 @@ Page({
           url: '../wallet/wallet'
         })
     },
-    health_data:function()
+    person_info:function()
     {
         wx.navigateTo({
-          url: '../health_data/health_data'
+          url: '../person_info/person_info'
         })
     },
     charge_standard:function()
