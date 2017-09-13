@@ -48,7 +48,6 @@
 .next_td
 {
     width:60px;
-   
     text-align: right;
     margin-right: 20px;
 }

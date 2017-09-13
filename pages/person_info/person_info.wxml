@@ -1,5 +1,5 @@
-<view class="app" style="font-size:12px">
-     <view style="height:60px;background-color:rgb(249, 249, 249); "></view>
+<view>
+    <view style="height:30px;background-color:rgb(249, 249, 249); "></view>
     <view class="table">
         <block>
             <view class = "tr" style="height:70px">
@@ -11,14 +11,14 @@
                 </view>
             </view>
         </block>
-        <view class="element"style="height:60px;background-color:rgb(249, 249, 249);"></view>
+        <view style="height:30px;background-color:rgb(249, 249, 249);"></view>
         <block>
             <view class = "tr">
                 <view class="td" style="width:40%">
                     <view>昵称</view> 
                 </view>
                 <view class="td" >
-                    <view></view> 
+                    <input maxlength="10" placeholder="最大输入长度10" placeholder-style='font-size:12px' /> 
                 </view>
             </view>
             <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
@@ -27,47 +27,50 @@
                     <view>身高</view> 
                 </view>
                 <view class="td">
-                    <view></view> 
+                    <input maxlength="18" placeholder="" placeholder-style='font-size:12px' /> 
                 </view>
             </view>
             <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
             <view class = "tr">
                 <view class="td" style="width:40%">
-                    <view>体重</view> 
+                    <text decode="{{true}}">体重</text> 
                 </view>
                 <view class="td">
-                    <view></view> 
+                    <input maxlength="18" placeholder="" placeholder-style='font-size:12px' /> 
                 </view>
             </view>
         </block>
-        <view class="element"style="height:60px;background-color:rgb(249, 249, 249);"></view>
+        <view style="height:30px;"></view>
         <block>
             <view class = "tr">
                 <view class="td" style="width:40%">
                     <view>真实姓名</view> 
                 </view>
-                <view class="td" >
-                    <view></view> 
+                <view class="td" style="width:60%">
+                    <input maxlength="10" placeholder="" placeholder-style='font-size:12px' />
                 </view>
             </view>
-            <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+            <view style="background-color: #ffffff;margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
             <view class = "tr">
                 <view class="td" style="width:40%">
                     <view>证件类型</view> 
                 </view>
-                <view class="td">
-                    <view></view> 
+                <view class="td " style="width:60%">
+                    <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> <view class="picker">{{array[index]}} </view> </picker> 
                 </view>
             </view>
-            <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+            <view  class = "tr_label" style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
             <view class = "tr">
                 <view class="td" style="width:40%">
                     <view>证件号码</view> 
                 </view>
-                <view class="td">
-                    <view></view> 
+                <view class="td" style="width:60%">
+                    <input maxlength="18" placeholder="最大输入长度18" placeholder-style='font-size:12px' />
                 </view>
-            </view>
-        </block>        
+            </view>  
+        </block>     
     </view>
+    <view style='margin-top:40px'>
+      <button type="primary"  style="background-color: red;width:300px"  class="button-hover">保存认证</button>
+    </view>   
 </view>
