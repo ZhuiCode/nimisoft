@@ -1,38 +1,31 @@
 <view class="app">
-    <view class="ele-breakline"></view>
-    <view class="table">
+    <view class="table" style="background-color: rgb(255, 215, 3);">
         <block>
-            <view class = "tr">
-                <view class="td" >
-                    <view class = "v_wallat_log">
-                        <image  class="img_wallat_log" src="../../images/wallet.png"></image>
+            <view class = "tr transcation_tr" style="padding-top:20px;">
+                <view class="td fish_food_td" >
+                    <view >
+                        <text>剩余鱼食（颗）</text>
                     </view>
                 </view>
-                <view class="td power_td" >
-                    <view >{{remain_power}}</view>
-                    <view >
-                        <text>剩余能量豆</text>
-                    </view>
+                <view class="td" style="text-align:right;" bindtap="trans_record">交易记录</view>
+            </view>
+            <view class = "tr transcation_tr" style="padding-bottom:20px;">
+                <view class="td fish_food_td" >
+                    <view>{{remain_power}}</view>
                 </view>
             </view>
         </block>
     </view>
-
-    <view class="element breakline"style="border-width:1px;border-bottom-style:solid;margin-top:11px;margin-left:auto;margin-right;:auto;width:375px;border-bottom-color:rgb(255, 153, 0);"></view>
     <view class="table">
-        <block>
-            <view class = "tr">
-                <view class="td" style="width:50%">
-                    <view bindtap="exchange" >
-                         <text>兑换</text>
-                    </view>
-                </view>
-                <view class="td" >
-                    <view >
-                        <text>钱包</text>
-                    </view>
-                </view>
+      <block>
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{pick_arr}}"> 
+            <view class = "tr pickrt_tr">
+            <view class="td" style='width:50%'>{{items[index].fish_food}}颗</view> <view class="td" style="width:20%;color:rgb(220,220,220)">优惠价:</view><view class="td" style="color:red;text-align: left;">{{items[index].value}}元</view>
             </view>
-        </block>
+        </picker> 
+      </block>
+    </view>
+    <view style='margin-top:100px'>
+      <button type="primary"  style="background-color: red;width:300px"  class="button-hover">立即购买</button>
     </view>
 </view>

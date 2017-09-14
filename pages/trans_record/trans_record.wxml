@@ -1,0 +1,7 @@
+<view class="app">
+    <view class="table" style="background-color: rgb(255, 215, 3);">
+        <block>
+           
+        </block>
+    </view>
+</view>

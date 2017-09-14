@@ -45,7 +45,7 @@
                     <text>钱包</text>
                 </view>
                 <view class="td next_td" >
-                    <view bindtap="charge_standard">
+                    <view bindtap="wallet">
                         <image class="image_icon_next" src="../../images/next_page.png"></image>
                     </view>
                 </view>
