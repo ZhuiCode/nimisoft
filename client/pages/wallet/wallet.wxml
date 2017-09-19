@@ -26,6 +26,6 @@
       </block>
     </view>
     <view style='margin-top:100px'>
-      <button type="primary"  style="background-color: red;width:300px"  class="button-hover">立即购买</button>
+      <button type="primary" bindtap="buy_now"  style="background-color: red;width:300px"  class="button-hover">立即购买</button>
     </view>
 </view>

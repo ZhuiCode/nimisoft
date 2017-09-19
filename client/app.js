@@ -1,15 +1,16 @@
-var util = require('utils/util.js');
-
+var qcloud = require('./vendor/wafer2-client-sdk/index')
+var config = require('./config')
 App({
   onLaunch: function () 
   {
+      qcloud.setLoginUrl(config.service.loginUrl);
       var that = this;
       wx.login({
         success: function(res) {
           if (res.code) {
             //发起网络请求
             wx.request({
-              url: 'https://www.seibertron.cn',
+              url: 'https://umexotih.qcloud.la',
               data: {
                 code:res.code
               },
