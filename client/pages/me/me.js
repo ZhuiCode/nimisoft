@@ -1,17 +1,52 @@
-var app=getApp();
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var app = getApp();
 Page({
     data: {
-        userInfo: {}
+        userInfo: {},
+        logged:false
     },
     onLoad: function () {
-        var that = this;
-        //调用应用实例的方法获取全局数据
-        app.getUserInfo(function(userInfo){
-            //更新数据
-            that.setData({
-                userInfo:userInfo
+            if (this.data.logged) {
+                return;
+            }
+            qcloud.setLoginUrl(config.service.loginUrl);
+            var that = this;
+            qcloud.login({
+                success(result) {
+                    if (result) {
+                        //util.showSuccess('登录成功')
+                        that.setData({
+                            userInfo: result,
+                            logged: true
+                        })
+                    } else {
+                        // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
+
+                        qcloud.request({
+
+                            url: config.service.requestUrl,
+                            login: true,
+                            success(result) {
+                                that.setData({
+                                    userInfo: result.data.data,
+                                    logged: true
+                                })
+                            },
+
+                            fail(error) {
+                                //util.showModel('请求失败', error)
+                                console.log('request fail', error)
+                            }
+                        });
+                    };
+                },
+
+                fail(error) {
+                    //util.showModel('登录失败', error)
+                    console.log('登录失败', error)
+                }
             })
-        })
     },
     wallet:function()
     {

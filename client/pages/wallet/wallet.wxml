@@ -16,16 +16,20 @@
             </view>
         </block>
     </view>
-    <view class="table">
-      <block>
-        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{pick_arr}}"> 
-            <view class = "tr pickrt_tr">
-            <view class="td" style='width:50%'>{{items[index].fish_food}}颗</view> <view class="td" style="width:20%;color:rgb(220,220,220)">优惠价:</view><view class="td" style="color:red;text-align: left;">{{items[index].value}}元</view>
-            </view>
-        </picker> 
-      </block>
-    </view>
-    <view style='margin-top:100px'>
-      <button type="primary" bindtap="buy_now"  style="background-color: red;width:300px"  class="button-hover">立即购买</button>
-    </view>
+    <form bindsubmit="buy_now">
+        <view class="table" >
+            <block>
+                <picker mode="selector" bindchange="bindPickerChange" name="idx" value="{{index}}" range="{{pick_arr}}"> 
+                    <view class = "tr pickrt_tr">
+                        <view class="td" style='width:50%'>{{items[index].fish_food}}颗</view> 
+                        <view class="td" style="width:20%;color:rgb(220,220,220)">优惠价:</view>
+                        <view class="td" style="color:red;text-align: left;">{{items[index].value}}元</view>
+                    </view>
+                </picker> 
+            </block>
+        </view>
+        <view style='margin-top:100px'>
+            <button form-type="submit"  style="background-color: red;width:300px"  class="button-hover">立即购买</button>
+        </view>
+    </form>
 </view>

@@ -1,41 +1,24 @@
-var app=getApp();
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var app = getApp()
 Page({
-	data: { outer_info: {temperature:0,humidity:0,pm25:0,shop_name:0},
-            inter_info:{temperature:0,humidity:0,pm25:0,cream:0},
+	data: { 
+            usercode: '',
+            backbase: {},
 			cur_people :0,
-			today_total_people:0,
-      toView: 'red',
-      scrollTop: 100
-	},
-	onLoad:function()
-	{
-		var that = this;
-		that.setData({
-            'outer_info.temperature':app.globalData.backbase.o_temperature,
-            'outer_info.humidity':app.globalData.backbase.o_humidity,
-            'outer_info.pm25':app.globalData.backbase.o_pm25,
-            'outer_info.shop_name':app.globalData.backbase.store_name,
-            
-            'inter_info.temperature':app.globalData.backbase.i_temperature,
-            'inter_info.humidity':app.globalData.backbase.i_humidity,
-            'inter_info.pm25':app.globalData.backbase.i_pm25,
-            'inter_info.cream':app.globalData.backbase.aroma,
-
-            'cur_people':app.globalData.backbase.cur_people,
-            'today_total_people' : app.globalData.backbase.total_people ,
-                    
-            })
-		
-	},
-  
-  onReady: function () {
+			today_total_people:0       
+    },
+    onLoad: function () 
+    {
+    },
+    onReady: function () {
     // 页面渲染完成
     var screen_width;
     wx.getSystemInfo({
       success: function (res) {
         screen_width =  res.windowWidth 
       }
-    })
+    });
     var cxt_arc = wx.createContext();//创建并返回绘图上下文context对象。
     cxt_arc.beginPath();//开始一个新的路径
     cxt_arc.arc(screen_width/2, 100, 70, 0, 2 * Math.PI, true);//设置一个原点(100,50)，半径为为50的圆的路径到当前路径

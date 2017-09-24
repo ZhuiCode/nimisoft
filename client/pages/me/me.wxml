@@ -1,6 +1,6 @@
 <view class="app">
     <view style="text-align:center;">
-      <image class="login_avatar" src="{{userInfo.avatarUrl}}"></image>
+      <image class="login_avatar" src="{{logged ? userInfo.avatarUrl : '../../images/user-unlogin.png'}}"></image>
     </view>
     <view style="border-width:2px;border-bottom-style:solid;margin-top:11px;margin-left:auto;margin-right:auto;width:375px;border-bottom-color:rgb(202, 202, 202);"></view>
     <view class="table">
