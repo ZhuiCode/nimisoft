@@ -1,8 +1,25 @@
-function paysignjs(appid, nonceStr, packag, signType, timeStamp) {
+var config = require('../config.js')
+var key = config.key
+var request = require("request")
+var crypto = require('crypto')
+var ejs = require('ejs')
+var fs = require('fs')
+module.exports = async (ctx, next) => {
+function random(num) {
+    var data = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+        , "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var result = "";
+        for (var i = 0; i < num; i++) {
+            r = Math.floor(Math.random() * 36);
+            result += data[r];
+        } 
+        return result;
+}
+function paysignjs(appid, nonceStr, package, signType, timeStamp) {
     var ret = {
         appId: appid,
         nonceStr: nonceStr,
-        package: packag,
+        package: package,
         signType: signType,
         timeStamp: timeStamp
     };
@@ -28,6 +45,7 @@ function raw1(args) {
     string = string.substr(1);
     return string;
 };
+
 function paysignjsapi(appid, attach, body, mch_id, nonce_str, notify_url, openid, out_trade_no, spbill_create_ip, total_fee, trade_type) {
     var ret = {
         appid: appid,
@@ -69,19 +87,27 @@ function getXMLNodeValue(node_name, xml) {
     var _tmp = tmp[1].split("</" + node_name + ">");
     return _tmp[0];
 }
+
+
 function app_pay(req) {
-    var bookingNo = req.param("bookingNo");
-    var total_fee = req.param("total_fee");
-    var openid = req.param("openid");
+    var bookingNo = req["bookingNo"];
+    var total_fee = req["total_fee"];
+    var openid = req["openid"];
     var body = "费用说明";
+    var appid = "wxfaa9d4937b7d9f50";
+    var mch_id = "";
+    var attach = "test";
+    var nonce_str = random(20);
+    var spbill_create_ip = "10.28.5.2";
+    var notify_url = "http://wxpay.wxutil.com/pub_v2/pay/notify.v2.php"
     var url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
     var formData = "<xml>";
-    formData += "<appid>appid</appid>"; //appid
+    formData += "<appid>"+appid+"</appid>"; //appid
     formData += "<attach>test</attach>";
     formData += "<body>" + body + "</body>";
-    formData += "<mch_id>mch_id</mch_id>"; //商户号
-    formData += "<nonce_str>nonce_str</nonce_str>";
-    formData += "<notify_url>notify_url</notify_url>";
+    formData += "<mch_id>" + mch_id + "</mch_id>"; //商户号
+    formData += "<nonce_str>"+nonce_str+"</nonce_str>";
+    formData += "<notify_url>" + notify_url + "</notify_url>";
     formData += "<openid>" + openid + "</openid>";
     formData += "<out_trade_no>" + bookingNo + "</out_trade_no>";
     formData += "<spbill_create_ip>spbill_create_ip</spbill_create_ip>";
@@ -105,20 +131,16 @@ function app_pay(req) {
                 _paySignjs: _paySignjs
             }
             /* 返回到微信小程序中*/
-            res.send(o);
+            //res.send(o);
+            return o;
         }
     })
 }
 /*如何实现此处的处理接口，主要是小程序前端发送过来的信息的接收和处理，以及如何返回*/
-module.exports = async (ctx, next) => {
-    // 通过 Koa 中间件进行登录态校验之后
-    // 登录信息会被存储到 ctx.state.$wxInfo
-    // 具体查看：
-    console("aaaa")
-    if (ctx.state.$wxInfo.loginState === 1) {
-        // loginState 为 1，登录态校验成功
-        ctx.state.data = ctx.state.$wxInfo.userinfo
-    } else {
-        ctx.state.code = -1
-    }
+
+  console.log("bbbbbbbbbbbbbbbbbbbbb")
+  console.log(ctx.request.body);
+  var book_info = ctx.request.body;
+  app_pay(book_info);
+  ctx.state.data = { msg: 'aaaaaaaaaaaaaa' }
 }

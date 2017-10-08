@@ -3,5 +3,7 @@
 	"svr": "./server",
 	"setting": {
 		"urlCheck": true
-	}
+	},
+	"appid": "wxfaa9d4937b7d9f50",
+	"projectname": "nimisoft"
 }
