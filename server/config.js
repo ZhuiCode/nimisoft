@@ -3,14 +3,14 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: 'wxfaa9d4937b7d9f50',
+    appId: 'wx576119495658127c',
 
     // 微信小程序 App Secret
-    appSecret: '',
+    appSecret: '636fde2757f6482d63fcf6d184e5c4f7',
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
-    key:"1111",
+    key:"ltpth0906yxwth199096thlychint123",
     /**
      * MySQL 配置，用来存储 session 和用户信息
      * 若使用了腾讯云微信小程序解决方案
@@ -21,7 +21,7 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'wxfaa9d4937b7d9f50',
+        pass: 'wx576119495658127c',
         char: 'utf8mb4'
     },
 
@@ -43,7 +43,7 @@ const CONF = {
     },
 
     // 微信登录态有效期
-    wxLoginExpires: 7200,
+    wxLoginExpires: 10,
     wxMessageToken: 'abcdefgh'
 }
 

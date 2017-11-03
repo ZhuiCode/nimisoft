@@ -6,11 +6,10 @@ Page({
         userInfo: {},
         logged:false
     },
-    onLoad: function () {
+    onReady: function () {
             if (this.data.logged) {
                 return;
             }
-            qcloud.setLoginUrl(config.service.loginUrl);
             var that = this;
             qcloud.login({
                 success(result) {
@@ -22,14 +21,12 @@ Page({
                         })
                     } else {
                         // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
-
                         qcloud.request({
-
                             url: config.service.requestUrl,
                             login: true,
                             success(result) {
                                 that.setData({
-                                    userInfo: result.data.data,
+                                    userInfo: result,
                                     logged: true
                                 })
                             },
