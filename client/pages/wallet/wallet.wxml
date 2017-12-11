@@ -4,7 +4,7 @@
             <view class = "tr transcation_tr" style="padding-top:20px;">
                 <view class="td fish_food_td" >
                     <view >
-                        <text>剩余鱼食（颗）</text>
+                        <text>剩余能量</text>
                     </view>
                 </view>
                 <view class="td" style="text-align:right;" bindtap="trans_record">交易记录</view>
@@ -19,9 +19,9 @@
     <form bindsubmit="buy_now">
         <view class="table" >
             <block>
-                <picker mode="selector" bindchange="bindPickerChange" name="idx" value="{{index}}" range="{{pick_arr}}"> 
+                <picker mode="selector" bindchange="bindPickerChange" name="idx" value="{{index}}" range="{{picks}}"> 
                     <view class = "tr pickrt_tr">
-                        <view class="td" style='width:50%'>{{items[index].fish_food}}颗</view> 
+                        <view class="td" style='width:50%'>{{items[index].power}}颗</view> 
                         <view class="td" style="width:20%;color:rgb(220,220,220)">优惠价:</view>
                         <view class="td" style="color:red;text-align: left;">{{items[index].value}}元</view>
                     </view>

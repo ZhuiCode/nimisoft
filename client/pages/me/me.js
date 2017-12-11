@@ -3,47 +3,26 @@ var config = require('../../config')
 var app = getApp();
 Page({
     data: {
-        userInfo: {},
+        userInfo: null,
         logged:false
     },
     onReady: function () {
-            if (this.data.logged) {
-                return;
+        var that = this;
+                    // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
+        qcloud.request({
+            url: config.service.requestUrl,
+            login: true,
+            success(result) {
+                that.setData({
+                    userInfo: result.data.data,
+                    logged: true
+                })
+            },
+            fail(error) {
+                //util.showModel('请求失败', error)
+                console.log('request fail', error)
             }
-            var that = this;
-            qcloud.login({
-                success(result) {
-                    if (result) {
-                        //util.showSuccess('登录成功')
-                        that.setData({
-                            userInfo: result,
-                            logged: true
-                        })
-                    } else {
-                        // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
-                        qcloud.request({
-                            url: config.service.requestUrl,
-                            login: true,
-                            success(result) {
-                                that.setData({
-                                    userInfo: result,
-                                    logged: true
-                                })
-                            },
-
-                            fail(error) {
-                                //util.showModel('请求失败', error)
-                                console.log('request fail', error)
-                            }
-                        });
-                    };
-                },
-
-                fail(error) {
-                    //util.showModel('登录失败', error)
-                    console.log('登录失败', error)
-                }
-            })
+        });
     },
     wallet:function()
     {
@@ -67,6 +46,12 @@ Page({
     {
         wx.navigateTo({
           url: '../hotline/hotline'
+        })
+    },
+    about_us:function()
+    {
+        wx.navigateTo({
+            url: '../about_us/about_us'
         })
     }
 })

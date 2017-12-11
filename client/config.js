@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://bhwe1qer.qcloud.la';
+var host = 'https://554717772.amidenzheng.cn';
 
 var config = {
     // 下面的地址配合云端 Demo 工作
@@ -23,7 +23,26 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
         
         // 微信支付接口
-        paymentUrl: `${host}/weapp/payment`
+        paymentUrl: `${host}/weapp/payment`,
+        
+        //店铺信息获取接口
+        storeinfoUrl: `${host}/weapp/opstoreinfo`,
+        //二维码扫描接口
+        scanqMarkUrl:`${host}/weapp/scanqmark`,
+        //获取注册用户信息
+        getuserinfoUrl: `${host}/weapp/getuserinfo`,
+
+        //设置注册用户信息
+        setuserinfoUrl: `${host}/weapp/setuserinfo`,
+
+        //获取店铺价格信息
+        getstorepriUrl: `${host}/weapp/getstoreprilist`,
+
+        //增加交易记录
+        addpayrecordUrl: `${host}/weapp/addpayrecord`,
+
+        //获取剩余能量
+        getremainpowerUrl: `${host}/weapp/getremainpower`,
     }
 };
 

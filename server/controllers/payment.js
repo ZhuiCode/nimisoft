@@ -9,7 +9,7 @@ function random(num) {
         , "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var result = "";
     for (var i = 0; i < num; i++) {
-        r = Math.floor(Math.random() * 36);
+        var r = Math.floor(Math.random() * 36);
         result += data[r];
     }
     return result;
@@ -83,11 +83,16 @@ function raw(args) {
 
 function getXMLNodeValue(node_name, xml) {
     var tmp = xml.split("<" + node_name + ">");
-    if (tmp != "")
+    
+    if (tmp.length > 1)
     {
         var str_tmp = tmp[1].toString();
         var _tmp = str_tmp.split("</" + node_name + ">");
         return _tmp[0];
+    }
+    else
+    {
+        return 0;
     }
 }
 function getIPAdress() {
@@ -105,15 +110,15 @@ function getIPAdress() {
         }
     }
 }
-var aaaa_data;
+var return_data;
 function app_pay(req)
 {
-    var bookingNo = req["book_fish_food"];
+    var bookingNo = req["bookingNo"];
     var total_fee = req["total_fee"];
     var openid = req["openid"];
     var desc = "费用说明";
     var appid = "wx576119495658127c";
-    var mch_id = "1490085582";
+    var mch_id = "1490085582"; 
     var attach = "test";
     var nonce_str = random(20);
     var spbill_create_ip = getIPAdress();
@@ -146,6 +151,11 @@ function app_pay(req)
 
             if (!err && response.statusCode == 200) {
                 var prepay_id = getXMLNodeValue('prepay_id', body.toString("utf-8"));
+                if (prepay_id ==0)
+                {
+                    return_data = 0;
+                    return 0;
+                }
                 var tmp = prepay_id.split('[');
                 var tmp1 = tmp[2].split(']');
                 var date = new Date();
@@ -155,17 +165,13 @@ function app_pay(req)
                 //console.log("aaaaaaaaaaaaaa" + timeStamp);
                 //签名
                 var _paySignjs = paysignjs(appid, nonceStr, "prepay_id=" + tmp1[0], 'MD5',str_timeStamp);
-                aaaa_data = {
+                return_data = {
                     prepay_id: tmp1[0],
                     str_timeStamp: str_timeStamp,
                     nonceStr: nonceStr,
                     _paySignjs: _paySignjs
                 }
                 /* 返回到微信小程序中*/
-                //res.send(o);
-                //console.log("aaaaaaaaaaaaaa" + prepay_id);
-                //console.log("bbbbbbbbbbbbbb" + _paySignjs);
-                //aaaa_data = o;
             }
         });
 
@@ -174,14 +180,14 @@ function ret_arr(para)
 {
     return para;
 }
-
+/*如何实现此处的处理接口，主要是小程序前端发送过来的信息的接收和处理，以及如何返回*/
 module.exports = async (ctx, next) => {
    
     //var ret_data;
     var book_info = ctx.request.body;
     await app_pay(book_info);
-    ctx.body = aaaa_data;
-    ctx.state.data = aaaa_data;
+    ctx.body = return_data;
+    ctx.state.data = return_data;
 }
 
-/*如何实现此处的处理接口，主要是小程序前端发送过来的信息的接收和处理，以及如何返回*/
+

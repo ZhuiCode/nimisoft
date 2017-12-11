@@ -34,10 +34,41 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 // --- 支付接口 --- //
-// GET  用来响应小程序后台配置时发送的验证请求
 router.post('/payment', controllers.payment)
 // POST 用来处理微信转发过来的客服消息
-//router.post('/payment', controllers.message.post)
+
+
+// --- 数据库操作接口 --- //
+
+//--- store数据库操作接口---//
+//--- store数据库店铺信息表表操作接口---//
+router.get('/opstoreinfo', controllers.opstoreinfo)
+
+//---扫描二维码操作---//
+router.post('/scanqmark', controllers.scanqmark)
+//--- 获取店面价格列表操作接口---//
+router.post('/getstoreprilist', controllers.getstoreprilist)
+
+
+//--- user数据库操作接口---//
+//---user数据库个人信息表接口---//
+router.post('/getuserinfo', controllers.getuserinfo)
+//---user数据库个人信息表接口---//
+router.post('/setuserinfo', controllers.setuserinfo)
+
+//---user数据库个人充值记录表接口---//
+router.post('/addpayrecord', controllers.addpayrecord)
+
+// ---获取个人剩余总的能量接口-- -//
+router.post('/getremainpower', controllers.getremainpower)
+
+
+//---user数据库个人运动计划表接口---//
+//router.post('/op_user_permp', controllers.op_user_permp)
+
+
+//---user数据库个人消费记录表接口---//
+//router.post('/op_user_pertrans', controllers.op_user_pertrans)
 
 
 module.exports = router

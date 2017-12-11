@@ -6,7 +6,7 @@ const CONF = {
     appId: 'wx576119495658127c',
 
     // 微信小程序 App Secret
-    appSecret: '636fde2757f6482d63fcf6d184e5c4f7',
+    appSecret: '584165b27243121807214d89ffadbb73', 
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
@@ -17,14 +17,13 @@ const CONF = {
      * 开发环境下，MySQL 的初始密码为您的微信小程序 appid
      */
     mysql: {
-        host: 'localhost',
+        host: '172.17.0.15',
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'wx576119495658127c',
+        pass: 'pi_mysql_123',
         char: 'utf8mb4'
     },
-
     cos: {
         /**
          * 区域
@@ -35,16 +34,15 @@ const CONF = {
          * 新加坡：sg
          * @see https://www.qcloud.com/document/product/436/6224
          */
-        region: 'cn-south',
+        region: 'ap-guangzhou',
         // Bucket 名称
-        fileBucket: 'qcloudtest',
+        fileBucket: 'wximg',
         // 文件夹
         uploadFolder: ''
     },
 
     // 微信登录态有效期
-    wxLoginExpires: 10,
-    wxMessageToken: 'abcdefgh'
+    wxLoginExpires: 7200
 }
 
-module.exports = CONF
+module.exports = process.env.NODE_ENV === 'local' ? Object.assign({}, CONF, require('./config.local')) : CONF;

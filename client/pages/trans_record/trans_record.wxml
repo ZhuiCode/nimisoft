@@ -1,7 +1,12 @@
 <view class="app">
-    <view class="table" style="background-color: rgb(255, 215, 3);">
-        <block>
-           
+      <block wx:for="{{trans_rec}}">
+       <view class="table">
+            <view class = "tr first" style="padding-top:10px;">
+                <view class="td trans_tp" >{{item.trans_type}}</view><view class="td trans_power" >能量：{{item.used_power}}粒</view>
+            </view>
+            <view class = "tr second" style="padding-bottom:10px;">
+                <view class="td trans_time" >{{item.updatetime}}</view><view class="td remain_power" >剩余：{{item.remain_power}}粒</view>  
+            </view>
+        </view>
         </block>
-    </view>
 </view>

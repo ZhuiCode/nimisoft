@@ -12,65 +12,72 @@
             </view>
         </block>
         <view style="height:30px;background-color:rgb(249, 249, 249);"></view>
-        <block>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <view>昵称</view> 
+        <form bindsubmit="formSubmit">
+            <block>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <view>昵称</view> 
+                    </view>
+                    <view class="td" style="width:60%">
+                        <view wx:if="{{nickname!=null}}"> {{nickname}}</view>
+                        <view wx:elif="{{nickname==null}}"><input name="nickname" maxlength="10" placeholder="最大输入长度10" placeholder-style='font-size:12px' /> </view>
+                    </view>
                 </view>
-                <view class="td" >
-                    <input maxlength="10" placeholder="最大输入长度10" placeholder-style='font-size:12px' /> 
+                <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <view>身高</view> 
+                    </view>
+                    <view class="td" style="width:60%">
+                        <view wx:if="{{height!=null}}">{{height}}</view>
+                        <view wx:elif="{{height==null}}"><input name="height" maxlength="18" placeholder="" placeholder-style='font-size:12px' /></view> 
+                    </view>
                 </view>
-            </view>
-            <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <view>身高</view> 
+                <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <text decode="{{true}}">体重</text> 
+                    </view>
+                    <view class="td" style="width:60%">
+                    <view  wx:if="{{weight!=null}}">{{weight}}</view>
+                    <view wx:elif="{{weight==null}}"><input name="weight" maxlength="18" placeholder="" placeholder-style='font-size:12px' /></view> 
+                    </view>
                 </view>
-                <view class="td">
-                    <input maxlength="18" placeholder="" placeholder-style='font-size:12px' /> 
+            </block>
+            <view style="height:30px;"></view>
+            <block>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <view>真实姓名</view> 
+                    </view>
+                    <view class="td" style="width:60%">
+                        <view  wx:if="{{name!=null}}">{{name}}</view>
+                        <view wx:elif="{{name!=null}}"><input name="truename" maxlength="10" placeholder="" placeholder-style='font-size:12px' /></view>
+                    </view>
                 </view>
-            </view>
-            <view style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <text decode="{{true}}">体重</text> 
+                <view style="background-color: #ffffff;margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <view>证件类型</view> 
+                    </view>
+                    <view class="td " style="width:60%">
+                        <picker name="id_type" mode="selector" bindchange="bindPickerChange" value="{{id_type}}" range="{{array}}"> <view class="picker">{{array[id_type]}} </view> </picker> 
+                    </view>
                 </view>
-                <view class="td">
-                    <input maxlength="18" placeholder="" placeholder-style='font-size:12px' /> 
-                </view>
-            </view>
-        </block>
-        <view style="height:30px;"></view>
-        <block>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <view>真实姓名</view> 
-                </view>
-                <view class="td" style="width:60%">
-                    <input maxlength="10" placeholder="" placeholder-style='font-size:12px' />
-                </view>
-            </view>
-            <view style="background-color: #ffffff;margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <view>证件类型</view> 
-                </view>
-                <view class="td " style="width:60%">
-                    <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> <view class="picker">{{array[index]}} </view> </picker> 
-                </view>
-            </view>
-            <view  class = "tr_label" style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
-            <view class = "tr">
-                <view class="td" style="width:40%">
-                    <view>证件号码</view> 
-                </view>
-                <view class="td" style="width:60%">
-                    <input maxlength="18" placeholder="最大输入长度18" placeholder-style='font-size:12px' />
-                </view>
-            </view>  
-        </block>     
+                <view  class = "tr_label" style="margin-left:80px; border-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202, 202, 202);"></view>
+                <view class = "tr">
+                    <view class="td" style="width:40%">
+                        <view>证件号码</view> 
+                    </view>
+                    <view class="td" style="width:60%">
+                        <view  wx:if="{{id_no!=null}}">{{id_no}}</view>
+                        <view wx:elif="{{id_no==null}}"><input name="id_no" maxlength="18" placeholder="最大输入长度18" placeholder-style='font-size:12px' /></view>
+                    </view>
+                </view>  
+            </block>   
+            <view style='margin-top:40px'>
+                <button formType="submit"  style="background-color: red;width:300px"  class="button-hover">保存认证</button>
+            </view>   
+        </form>  
     </view>
-    <view style='margin-top:40px'>
-      <button type="primary"  style="background-color: red;width:300px"  class="button-hover">保存认证</button>
-    </view>   
 </view>

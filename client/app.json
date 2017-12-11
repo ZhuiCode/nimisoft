@@ -7,11 +7,11 @@
     "backgroundTextStyle": "dark"
   },
  
-  "pages": ["pages/main/main","pages/me/me","pages/wallet/wallet","pages/person_info/person_info","pages/hotline/hotline","pages/trans_record/trans_record"],
+  "pages": ["pages/main/main","pages/me/me","pages/wallet/wallet","pages/person_info/person_info","pages/hotline/hotline","pages/trans_record/trans_record","pages/about_us/about_us","pages/scan/scan"],
   "tabBar": {"borderStyle":"white","color":"#fff","selectedColor":"#fff","backgroundColor":"#E5E5E5",
              "list":[
                {"iconPath":"images/main_pic.png","selectedIconPath":"images/main_pic.png","text":"首页","pagePath":"pages/main/main"},
-               {"iconPath":"images/qrcode.png","selectedIconPath": "images/qrcode.png","text": "二维码","pagePath": "pages/main/main"},
+               {"iconPath":"images/qrcode.png","selectedIconPath": "images/2d_code.png","text": "二维码","pagePath": "pages/scan/scan"},
                {"iconPath":"images/me_pic.png","selectedIconPath":"images/me_pic.png","text":"我的","pagePath":"pages/me/me"}]},
     "networkTimeout": {
     "request": 10000,

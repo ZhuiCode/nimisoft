@@ -6,21 +6,21 @@
                 <view class = "tr straight_line">
                     <view class="td short_vertical_line">
                         <view class="location"><text class="text_location">室外</text></view>
-                        <view class="shop_name"><text class="text_main">{{backbase.shop_name}}</text></view>
+                        <view class="shop_name"><text class="text_main">{{shop_name}}</text></view>
                     </view>
                     <view class="td short_vertical_line">
-                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{backbase.o_temperature}}°C</text></view>
-                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{backbase.o_humidity}}% RH</text></view>
-                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{backbase.o_pm25}}</text></view>
+                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{o_temperature}}°C</text></view>
+                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{o_humidity}}% RH</text></view>
+                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{o_pm25}}</text></view>
                     </view>
                     <view class="td short_vertical_line">
                         <view class="location"><text class="text_location">室内</text></view>
-                        <view class="shop_name"><text class="text_main">{{backbase.aroma}}</text></view>
+                        <view class="shop_name"><text class="text_main">{{aroma}}</text></view>
                     </view>
                     <view class="td local_info">
-                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{backbase.i_temperature}}°C</text></view>
-                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{backbase.i_humidity}}%RH</text></view>
-                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{backbase.i_pm25}}</text></view>
+                        <view class="temperature"><image class = "little_title" src="../../images/green.png"></image><text class="text_main">{{i_temperature}}°C</text></view>
+                        <view class="humidity"><image class = "little_title" src="../../images/blue.png"></image><text class="text_main">{{i_humidity}}%RH</text></view>
+                        <view class="pm"><image class = "little_title" src="../../images/orange.png"></image><text class="text_main">PM2.5 {{i_pm25}}</text></view>
                     </view>
                 </view>
             </block>
